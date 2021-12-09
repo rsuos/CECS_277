@@ -1,0 +1,60 @@
+int attackMenuChoice = 0;
+
+                  int moveChoice = 0;
+
+                  // Wild variables will eventually be randomized to let opposing pokemon attack back
+                  int wildAttackMenuChoice = 0;
+
+                  int wildMoveChoice = 0;
+
+                  // Provides random value/movement in map if player runs away from Fight
+                  int randomDirection = 0;
+
+                  System.out.println("Choose a pokemon:");
+                  
+                  System.out.println(player.getPokemonList());
+
+                  chosenPokemon = CheckInput.getIntRange(1, player.getNumPokemon());
+                  
+                  Pokemon currentPokemon = player.getPokemon(chosenPokemon); // This is a shallow copy. Any changes made to currentPokemon will be applied to the chosenPokemon from the arrayList
+
+                  System.out.println(currentPokemon.getName() + ", I choose you!\n");
+
+                  System.out.println(currentPokemon.getAttackMenu() + "\n");
+
+                  attackMenuChoice = CheckInput.getIntRange(1, 2);
+
+                  switch(attackMenuChoice)  {
+                    case 1: System.out.println(currentPokemon.getBasicMenu() + "\n");
+                            moveChoice = CheckInput.getIntRange(1,3);
+                            System.out.println(currentPokemon.basicAttack(wildPokemon, moveChoice));
+
+                            // Wild pokemon attack turn
+                            wildAttackMenuChoice = RandomNumberGenerator.RandomNumberInRange(1,2);
+                            wildMoveChoice = RandomNumberGenerator.RandomNumberInRange(1,3);
+
+                            if(wildAttackMenuChoice == 1)  {
+                              System.out.println(wildPokemon.basicAttack(currentPokemon, wildMoveChoice));
+                            }
+
+                            else if(wildAttackMenuChoice == 2)  {
+                              System.out.println(wildPokemon.specialAttack(currentPokemon, wildMoveChoice));
+                            }
+
+                            break;
+                    case 2: System.out.println(currentPokemon.getSpecialMenu() + "\n");
+                            moveChoice = CheckInput.getIntRange(1,3);
+                            System.out.println(currentPokemon.specialAttack(wildPokemon, moveChoice));
+
+                            // Wild pokemon attack turn
+                            wildAttackMenuChoice = RandomNumberGenerator.RandomNumberInRange(1,2);
+                            wildMoveChoice = RandomNumberGenerator.RandomNumberInRange(1,3);
+
+                            if(wildAttackMenuChoice == 1)  {
+                              System.out.println(wildPokemon.basicAttack(currentPokemon, wildMoveChoice));
+                            }
+
+                            else if(wildAttackMenuChoice == 2)  {
+                              System.out.println(wildPokemon.specialAttack(currentPokemon, wildMoveChoice));
+                            }
+                  }
