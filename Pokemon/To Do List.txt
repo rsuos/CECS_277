@@ -1,0 +1,45 @@
+TO DO:
+  Main
+    - Pokemon limit 6 implementation
+    - Fix attack damage going negative when attack debuffed multiple times
+
+Done:
+- Entity
+- Grass
+- Fire
+- Water
+- Map
+  Trainer
+    - change movement implementation
+    - check removePokemon return value (Pokemon) **Checked with Professor, pretty common feature to return object in case it is needed after removing from list**
+    
+  PokemonDecorator
+    - Some
+    - Combat debuff Implementation
+    - Buffs Implementation
+    
+  PokemonGenerator
+    - ALL
+  Pokemon Class
+    - getAttackBonus: Need PokemonDecorator to be completed
+  Trainer
+    - buffAllPokemon
+    - debuffAllPokemon
+  Main
+    - Gym Leader Implementation
+  Javadoc Comments
+    - Main
+    - AttackDown
+    - AttackUp
+    - HpDown
+    - HpUp
+    - Entity
+    - Map
+    - Pokemon
+    - PokemonDecorator
+    - PokemonGenerator
+    - RandomNumberGenerator
+    - Trainer
+    - Fire
+    - Grass
+    - Water
